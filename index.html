@@ -1,33 +1,20 @@
-
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Preview</title>
+  <title>Angular with Data List & Modals</title>
   <base target="_self">
   <meta name="description" content="Codeply is a free editor online for Web developers and designers." />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google" value="notranslate">
-  <link rel="shortcut icon" href="/images/cp_ico.png">
-
-
-
-  <!--stylesheets / link tags loaded here-->
-
-
-
+  <!-- <link rel="shortcut icon" href="/images/cp_ico.png"> -->
+  <!-- stylesheets / link tags loaded here -->
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-
-
-
-
   <style type="text/css"></style>
-
 </head>
-<body >
-
+<body>
 <div class="container" ng-app="myApp" ng-controller="Main">
-  <h3>Angular Starter With Data List and Modals</h3>
+  <h3>Angular with Data List & Modals</h3>
   <ul class="list-unstyled">
   	<li data-ng-repeat="item in data track by $index">
       <label class="customLabel" id="{{item.id}}"><a href="" ng-click="setSelectedItem($index)" data-toggle="modal" data-target="#detailsModal">{{item.title}} - {{item.category_name}}</a></label>
@@ -71,12 +58,7 @@
       </div>
     </div>
   </div><!--/modal-->
-
 </div><!--/container-->
-
-
-
-
   <script>
     // sandbox disable popups
     if (window.self !== window.top && window.name!="view1") {;
@@ -113,14 +95,10 @@
       }
     }, false);
   </script>
-
   <!--scripts loaded here-->
-
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/angular.min.js"></script>
-
   <script src="scripts.js"></script>
-
 </body>
 </html>
