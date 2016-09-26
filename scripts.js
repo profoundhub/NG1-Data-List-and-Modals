@@ -21,4 +21,4 @@ function Main($scope, $http){
 
 }
 
-//$(document).ready(function() {});
+$(document).ready(function() {});
