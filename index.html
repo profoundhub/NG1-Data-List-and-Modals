@@ -1,74 +1,153 @@
 
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Preview</title>
+  <base target="_self">
+  <meta name="description" content="Codeply is a free editor online for Web developers and designers." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google" value="notranslate">
+  <link rel="shortcut icon" href="/images/cp_ico.png">
 
-        <link href="//code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" type="text/css" rel="stylesheet" media="all">
-        <link href="//maxcdn.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" >
-        <link href="//maxcdn.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet" >
 
-        <!--[if lt IE 9]>
-          <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
 
-        <script data-cfasync="false" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script data-cfasync="false" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
-        <script data-cfasync="false" src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+  <!--stylesheets / link tags loaded here-->
 
-  </head>
-  <body itemscope itemtype="http://schema.org/WebApplication">
 
-    <div class="container" ng-app="myApp" ng-controller="Main">
-      <h3>Angular One: Data List &amp; Modals</h3>
-      <ul class="list-unstyled">
-      	<li data-ng-repeat="item in data track by $index">
-          <label class="customLabel" id="{{item.id}}"><a href="" ng-click="setSelectedItem($index)" data-toggle="modal" data-target="#detailsModal">{{item.title}} - {{item.category_name}}</a></label>
-          <div class="pull-right actions">
-            <a href="" class="trash" data-toggle="modal" data-target="#deleteModal" ng-click="setSelectedItem($index)">x</a>
-          </div>
-        </li>
-      </ul>
 
-      <div id="detailsModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-sm">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-              <h4 class="modal-title">{{data[selectedItem].title}} Details</h4>
-            </div>
-            <div class="modal-body">
-              <div class="modalMsg"><p>id:{{data[selectedItem].id}} - {{data[selectedItem].desc}}</p></div>
-              <div class="actionsBtns">
-                <button class="btn btn-default" data-dismiss="modal">OK</button>
-              </div>
-            </div>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+
+
+
+  <style type="text/css"></style>
+
+</head>
+<body >
+
+<div class="container" ng-app="myApp" ng-controller="Main">
+  <h3>Angular Starter With Data List and Modals</h3>
+  <ul class="list-unstyled">
+  	<li data-ng-repeat="item in data track by $index">
+      <label class="customLabel" id="{{item.id}}"><a href="" ng-click="setSelectedItem($index)" data-toggle="modal" data-target="#detailsModal">{{item.title}} - {{item.category_name}}</a></label>
+      <div class="pull-right actions">
+        <a href="" class="trash" data-toggle="modal" data-target="#deleteModal" ng-click="setSelectedItem($index)">x</a>
+      </div>
+    </li>
+  </ul>
+
+  <div id="detailsModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+          <h4 class="modal-title">{{data[selectedItem].title}} Details</h4>
+        </div>
+        <div class="modal-body">
+          <div class="modalMsg"><p>id:{{data[selectedItem].id}} - {{data[selectedItem].desc}}</p></div>
+          <div class="actionsBtns">
+            <button class="btn btn-default" data-dismiss="modal">OK</button>
           </div>
         </div>
-      </div><!--/modal-->
+      </div>
+    </div>
+  </div><!--/modal-->
 
-      <div id="deleteModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-sm">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-              <h4 class="modal-title" id="myModalLabel">Confirm</h4>
-            </div>
-            <div class="modal-body">
-              <div class="modalMsg"><p>Are you sure want to remove item #{{selectedItem+1}}?</p></div>
-              <div class="actionsBtns">
-                <button class="btn btn-default" ng-click="deleteItem()" data-dismiss="modal">Yes</button>
-                <button class="btn btn-default" data-dismiss="modal">No</button>
-              </div>
-            </div>
+  <div id="deleteModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+          <h4 class="modal-title" id="myModalLabel">Confirm</h4>
+        </div>
+        <div class="modal-body">
+          <div class="modalMsg"><p>Are you sure want to remove item #{{selectedItem+1}}?</p></div>
+          <div class="actionsBtns">
+            <button class="btn btn-default" ng-click="deleteItem()" data-dismiss="modal">Yes</button>
+            <button class="btn btn-default" data-dismiss="modal">No</button>
           </div>
         </div>
-      </div><!--/modal-->
+      </div>
+    </div>
+  </div><!--/modal-->
 
-    </div><!--/container-->
+</div><!--/container-->
 
-    <script src="scripts.js"></script>
-  </body>
+
+
+
+  <script>
+    // sandbox disable popups
+    if (window.self !== window.top && window.name!="view1") {;
+      window.alert = function(){/*disable alert*/};
+      window.confirm = function(){/*disable confirm*/};
+      window.prompt = function(){/*disable prompt*/};
+      window.open = function(){/*disable open*/};
+    }
+
+    // prevent href=# click jump
+    document.addEventListener("DOMContentLoaded", function() {
+      var links = document.getElementsByTagName("A");
+      for(var i=0; i < links.length; i++) {
+        if(links[i].href.indexOf('#')!=-1) {
+          links[i].addEventListener("click", function(e) {
+          console.debug("prevent href=# click");
+              if (this.hash) {
+                if (this.hash=="#") {
+                  e.preventDefault();
+                  return false;
+                }
+                else {
+                  /*
+                  var el = document.getElementById(this.hash.replace(/#/, ""));
+                  if (el) {
+                    el.scrollIntoView(true);
+                  }
+                  */
+                }
+              }
+              return false;
+          })
+        }
+      }
+    }, false);
+  </script>
+
+  <!--scripts loaded here-->
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/angular.min.js"></script>
+
+
+
+  <script>
+  var myApp = angular.module('myApp', []);
+function Main($scope, $http){
+
+  $scope.data = [
+   {id:1, title:'Foo', desc:'More stuff about this here', category_name:'Category 1'},
+   {id:2, title:'Goo', desc:'More stuff about this here', category_name:'Category 2'},
+   {id:3, title:'Roo', desc:'Blah details on Roo are here', category_name:'Category 1'},
+   {id:4, title:'Hoo', desc:'More stuff about Hoo here', category_name:'Category 2'},
+   {id:5, title:'Woo', desc:'More stuff about this here', category_name:'Category 3'}
+  ];
+
+  $scope.setSelectedItem = function(i){
+    $scope.selectedItem = i;
+  }
+
+  $scope.deleteItem = function(){
+    if ($scope.selectedItem >= 0) {
+    	$scope.data.splice($scope.selectedItem,1);
+    }
+  }
+
+}
+
+//$(document).ready(function() {});
+  </script>
+
+</body>
 </html>
